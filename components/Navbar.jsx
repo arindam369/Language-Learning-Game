@@ -2,9 +2,25 @@
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useContext } from "react";
+import AuthContext from "@/store/AuthContext";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const router = useRouter();
+  const authCtx = useContext(AuthContext);
+
+  const logout = async ()=>{
+    await axios.get(`/api/logout/${authCtx.userId}`).then(()=>{
+      toast.success("Logged out successfully");
+      authCtx.updateUserId(null);
+      authCtx.updateUserData(null);
+      authCtx.updateAuthenticationStatus(false);
+    }).catch((err)=>{
+      console.log(err);
+    });
+  }
 
   return (
     <>
@@ -25,7 +41,7 @@ export default function Navbar() {
               Dashboard
             </Link>
 
-            <Link
+            {!authCtx.isAuthenticated && <Link
               href={"/login"}
               className={
                 router.pathname === "/login"
@@ -34,7 +50,8 @@ export default function Navbar() {
               }
             >
               Login
-            </Link>
+            </Link>}
+            {authCtx.isAuthenticated && <div className="navBullet" onClick={logout}>Logout</div>}
           </div>
         </div>
       </div>

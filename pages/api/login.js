@@ -1,6 +1,8 @@
+// Login to an account:  POST /api/login  {email, password}
+
 import { connectMongoDB } from "@/src/db/mongoose";
 import User from "@/src/models/user";
-import { NextResponse } from "next/server";
+import cookie from 'cookie';
 
 export default async function handler(req, res){
     if(req.method === "POST"){
@@ -15,17 +17,13 @@ export default async function handler(req, res){
             const authenticatedUser = await User.checkLoginCredentials(email, password);
             const token = await authenticatedUser.generateAuthTokens();
 
-            const response = NextResponse.json({
-                message: "Logged in successfully",
-                success: true
-            })
-    
-            response.cookies.set("language-game", token, {
-                expires: new Date(Date.now() + 24 * 60 * 60 * 1000),  // expires in 1 day
-                httpOnly: true
-            })
-            
-            return res.status(200).send("Logged in successfully");
+            const cookies = cookie.serialize('languageGame', token, {
+                httpOnly: true,
+                maxAge: 24*60*60, // Token expires in 1 day
+                path: '/',
+            });
+            res.setHeader('Set-Cookie', cookies);
+            res.status(200).send(authenticatedUser);
         }
         catch(err){
             console.log(err);

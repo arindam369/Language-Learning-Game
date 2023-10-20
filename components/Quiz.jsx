@@ -1,6 +1,16 @@
+import { useRouter } from "next/router";
 import styles from "../styles/Home.module.css";
+import { useContext } from "react";
+import AuthContext from "@/store/AuthContext";
 
 export default function Quiz(){
+    const router = useRouter();
+    const goToLogin = ()=>{
+        router.push("/login");
+    }
+
+    const authCtx = useContext(AuthContext);
+
     return (
         <>
             <div className={styles.quizContainer}>
@@ -30,8 +40,8 @@ export default function Quiz(){
                         </select>
                     </div>
                 </div>
-                {/* <button>Start Quiz</button> */}
-                <button>Login to Start Quiz</button>
+                {authCtx.isAuthenticated && <button>Start Quiz</button>}
+                {!authCtx.isAuthenticated && <button onClick={goToLogin}>Login to Start Quiz</button>}
             </div>
         </>
     )

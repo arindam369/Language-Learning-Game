@@ -3,12 +3,13 @@ import Navbar from "@/components/Navbar";
 import Register from "@/components/Register";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
+import LoginRoute from "@/hoc/LoginRoute";
 
-export default function LoginPage() {
+function LoginPage() {
   const [visibleLogin, setVisibleLogin] = useState(true);
-    const toggleLogin = ()=>{
-        setVisibleLogin(!visibleLogin);
-    }
+  const toggleLogin = ()=>{
+      setVisibleLogin(!visibleLogin);
+  }
 
   return (
     <>
@@ -20,3 +21,5 @@ export default function LoginPage() {
     </>
   );
 }
+
+export default LoginRoute(LoginPage);
