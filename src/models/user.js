@@ -24,6 +24,17 @@ const userSchema = new mongoose.Schema(
                     required: true
                 }
             }
+        ],
+        scoreboard: [
+            {
+                language: String,
+                difficulty: String,
+                quantity: String,
+                yourScore: String,
+                totalScore: String,
+                accuracy: String,
+                rating: String,
+            }
         ]
     }
 );

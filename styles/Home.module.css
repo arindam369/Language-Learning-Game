@@ -294,3 +294,92 @@
 .leaderboard .quizScore{
 
 }
+
+/* Quiz Content ---------------------------------------------- */
+.quizContentContainer{
+  background: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgb(211, 209, 209);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+.quizContentContainer .quizQuestion{
+  margin: 10px 0px;
+}
+.quizContentContainer .quizOptions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.quizContentContainer .quizOptions li{
+  list-style: none;
+  padding: 5px 10px;
+  width: 120px;
+  margin: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid rgb(208, 208, 208);
+  cursor: pointer;
+}
+.pointScore{
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #3B71CA;
+  font-size: .9rem;
+}
+
+/* Scoreboard ---------------------------- */
+.scoreboardContainer{
+  background: white;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgb(211, 209, 209);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 400px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  margin-top: 40px;
+}
+.scoreboardContainer .questionNo{
+  margin: 4px 0px;
+}
+.scoreboardContainer .score{
+  margin: 4px 0px;
+}
+.scoreboardContainer .accuracy{
+  margin: 4px 0px;
+}
+.scoreboardContainer .label{
+  margin: 0px 7px;
+  font-weight: 600;
+  font-size: .85rem;
+}
+.scoreboardContainer .ans{
+  font-size: .85rem;
+}
+.scoreboardContainer .rating{
+  position: absolute;
+  right: 30px;
+  box-shadow: 2px 2px 5px 2px rgb(211, 209, 209);
+  padding: 25px;
+  border-radius: 50%;
+}
+.scoreboardContainer .rating .rateValue{
+  color: #F75023;
+  font-weight: 600;
+}
+.nextButton{
+  color: #3B71CA;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+}

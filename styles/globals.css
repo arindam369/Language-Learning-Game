@@ -20,3 +20,12 @@ body{
   cursor: pointer;
   color: #F75023;
 }
+
+.wrongAnswer{
+  background: #DC4C64;
+  color: white;
+}
+.correctAnswer{
+  background: #14A44D;
+  color: white;
+}
