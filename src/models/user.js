@@ -32,7 +32,6 @@ const userSchema = new mongoose.Schema(
                 quantity: String,
                 yourScore: String,
                 totalScore: String,
-                accuracy: String,
                 rating: String,
             }
         ]

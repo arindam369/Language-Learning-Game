@@ -1,11 +1,13 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import AuthContext from "@/store/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
+import RankTable from "./RankTable";
 
 export default function Scoreboard({onGenerateEasy, onGenerateMedium, onGenerateHard, shouldGoNext}) {
   const authCtx = useContext(AuthContext);
+  const [generateSignal, setGenerateSignal] = useState(false);
 
   const goNext = ()=>{
     const accuracy = (authCtx.totalScore===0 ? 0 : (authCtx.yourScore/authCtx.totalScore)*100);
@@ -48,9 +50,9 @@ export default function Scoreboard({onGenerateEasy, onGenerateMedium, onGenerate
       quantity: authCtx.quantity,
       yourScore: authCtx.yourScore,
       totalScore: authCtx.totalScore,
-      accuracy: authCtx.accuracy,
       rating: authCtx.rating}).then((response)=>{
         toast.success("Record saved successfully");
+        setGenerateSignal(!generateSignal);
       }).catch((err)=>{
         console.log(err);
       })
@@ -83,6 +85,8 @@ export default function Scoreboard({onGenerateEasy, onGenerateMedium, onGenerate
       </div>
       {/* <div className={styles.nextButton} onClick={goNext}>Next</div> */}
       {+authCtx.questionsSolved===+authCtx.quantity && <div className={styles.nextButton} onClick={saveRecord}>Save Record</div>}
+      {+authCtx.questionsSolved === +authCtx.quantity && <RankTable language={authCtx.language} generateSignal={generateSignal}/>}
+
     </>
   );
 }

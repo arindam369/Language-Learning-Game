@@ -21,7 +21,7 @@ export default function Leaderboard(){
         <>
             <div className={styles.leaderboardContainer}>
                 <div className={styles.trophyBox}><FaTrophy className={styles.trophyIcon}/>
-                    <span>Leaderboard</span>
+                    <span>Scoreboard</span>
                 </div>
 
                 <div className={styles.leaderboards}>
@@ -29,7 +29,7 @@ export default function Leaderboard(){
                         return (
                             <div className={styles.leaderboard} key={score._id}>
                                 <div className={styles.quizLanguage}>{(score.language).replace(/^\w/, c =>c.toUpperCase())}</div>
-                                <div className={styles.quizLanguage}>{score.quantity} Questions</div>
+                                <div className={styles.quizDifficulty}>{score.quantity} Questions</div>
                                 <div className={styles.quizDifficulty1}>{(score.difficulty).replace(/^\w/, c =>c.toUpperCase())}</div>
                                 <div className={styles.quizResult}><b>Score:</b> {score.yourScore}/{score.totalScore}</div>
                                 <div className={styles.quizScore}><b>Accuracy:</b> {((score.yourScore/score.totalScore)*100).toFixed(2)}%</div>
@@ -37,30 +37,7 @@ export default function Leaderboard(){
                             </div>
                         )
                     })}
-                    {/* <div className={styles.leaderboard}>
-                        <div className={styles.quizLanguage}>Bengali</div>
-                        <div className={styles.quizDifficulty1}>Easy</div>
-                        <div className={styles.quizResult}>13/15</div>
-                        <div className={styles.quizScore}>350/400</div>
-                    </div>
-                    <div className={styles.leaderboard}>
-                        <div className={styles.quizLanguage}>Bengali</div>
-                        <div className={styles.quizDifficulty1}>Easy</div>
-                        <div className={styles.quizResult}>13/15</div>
-                        <div className={styles.quizScore}>350/400</div>
-                    </div>
-                    <div className={styles.leaderboard}>
-                        <div className={styles.quizLanguage}>Bengali</div>
-                        <div className={styles.quizDifficulty2}>Medium</div>
-                        <div className={styles.quizResult}>13/15</div>
-                        <div className={styles.quizScore}>350/400</div>
-                    </div>
-                    <div className={styles.leaderboard}>
-                        <div className={styles.quizLanguage}>Bengali</div>
-                        <div className={styles.quizDifficulty3}>Hard</div>
-                        <div className={styles.quizResult}>13/15</div>
-                        <div className={styles.quizScore}>350/400</div>
-                    </div> */}
+                    {scoreboard.length===0 && <div className={styles.noRecord}>No Score Found</div>}
                 </div>
             </div>
         </>
