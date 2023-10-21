@@ -34,7 +34,6 @@ export default function Login({onRegister}){
                 authCtx.updateAuthenticationStatus(true);
                 authCtx.updateUserData(data);
                 authCtx.updateUserId(data._id);
-                console.log(data);
                 
                 router.push("/dashboard");
             });

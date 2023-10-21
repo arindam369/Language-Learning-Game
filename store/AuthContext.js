@@ -60,7 +60,6 @@ export const AuthContextProvider = (props)=>{
             try {
                 const response = await axios.get('/api/auth');
                 const data = response.data;
-                console.log(data);
 
                 if (data.user) {
                     setUserData(data.user);

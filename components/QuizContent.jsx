@@ -11,7 +11,6 @@ export default function QuizContent({content, onNext}){
         const mySelection = String.fromCharCode("A".charCodeAt(0) + id);
         setSelectedOption(mySelection);
 
-        console.log(mySelection, content.answer);
         if(mySelection === content.answer){
             authCtx.updateYourScore(+authCtx.yourScore + +content.score);
         }
@@ -32,7 +31,7 @@ export default function QuizContent({content, onNext}){
                         return (<li key={option} onClick={()=>{selectOption(id)}} className={(selectedOption && selectedOption.charCodeAt(0)-65===id && (selectedOption === content.answer ? "correctAnswer":"wrongAnswer"))||""}>{option}</li>)
                     })}
                 </div>
-                <div className={styles.pointScore}>{content.score}</div>
+                <div className={styles.pointScore}>{content.score} Points</div>
             </div>
         </>
     )

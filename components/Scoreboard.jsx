@@ -14,27 +14,24 @@ export default function Scoreboard({onGenerateEasy, onGenerateMedium, onGenerate
     if(+authCtx.questionsSolved < +authCtx.quantity-1){
       if(+authCtx.questionsSolved >= 2){
           if(+accuracy >= 80){
-            console.log("Hard called");
-            onGenerateHard();
+            onGenerateHard(authCtx.language);
           }
           else if(+accuracy >= 55){
-            console.log("Medium called");
-            onGenerateMedium();
+            onGenerateMedium(authCtx.language);
           }
           else{
-            console.log("Easy called");
-            onGenerateEasy();
+            onGenerateEasy(authCtx.language);
           }
       }
       else{
           if(authCtx.difficulty === "easy"){
-            onGenerateEasy();
+            onGenerateEasy(authCtx.language);
           }
           else if(authCtx.difficulty === "medium"){
-            onGenerateMedium();
+            onGenerateMedium(authCtx.language);
           }
           else{
-            onGenerateHard();
+            onGenerateHard(authCtx.language);
           }
       }
     }
@@ -48,6 +45,7 @@ export default function Scoreboard({onGenerateEasy, onGenerateMedium, onGenerate
       language: authCtx.language,
       difficulty: authCtx.difficulty,
       quantity: authCtx.quantity,
+      userId: authCtx.userData.email.split("@")[0].replace(/[.+-]/g, "_"),
       yourScore: authCtx.yourScore,
       totalScore: authCtx.totalScore,
       rating: authCtx.rating}).then((response)=>{

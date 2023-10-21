@@ -42,9 +42,10 @@ export default function Quiz({onQuiz}){
                     <div className={styles.selectInput}>
                         <select value={language} onChange={(e)=>{setLanguage(e.target.value)}}>
                             <option value="" hidden>Select Language</option>
-                            <option value="bengali">Bengali</option>
-                            <option value="english">English</option>
-                            <option value="hindi">Hindi</option>
+                            <option value="c++">C++</option>
+                            <option value="java">Java</option>
+                            <option value="python">Python</option>
+                            <option value="javascript">JavaScript</option>
                         </select>
                     </div>
                     <div className={styles.selectInput}>
@@ -59,8 +60,8 @@ export default function Quiz({onQuiz}){
                         <select value={quantity} onChange={(e)=>{setQuantity(e.target.value)}}>
                             <option value="" hidden>Select Quantity</option>
                             <option value="10">10</option>
+                            <option value="15">15</option>
                             <option value="20">20</option>
-                            <option value="30">30</option>
                         </select>
                     </div>
                 </div>

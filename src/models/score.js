@@ -5,7 +5,8 @@ const scoreSchema = new mongoose.Schema(
         language: String,
         difficulty: String,
         quantity: String,
-        user: String,
+        user: String,       // user is actually the _id of the user
+        userId: String,     // email in short form
         yourScore: String,
         totalScore: String
     }

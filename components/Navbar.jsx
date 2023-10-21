@@ -33,6 +33,14 @@ export default function Navbar() {
         <div className={styles.rightPart}>
           <div className={styles.navBullets}>
             <Link
+              href={"/leaderboard"}
+              className={
+                router.pathname === "/leaderboard" ? "selectedNavBullet" : "navBullet"
+              }
+            >
+              Leaderboard
+            </Link>
+            <Link
               href={"/dashboard"}
               className={
                 router.pathname === "/dashboard" ? "selectedNavBullet" : "navBullet"

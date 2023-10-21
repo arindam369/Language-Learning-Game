@@ -1,20 +1,7 @@
-import { useContext, useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import {FaTrophy} from "react-icons/fa";
-import axios from "axios";
-import AuthContext from "@/store/AuthContext";
 
-export default function Leaderboard(){
-    const authCtx = useContext(AuthContext);
-
-    const [scoreboard, setScoreboard] = useState([]);
-    useEffect(()=>{
-        const generateLeaderboard = async ()=>{
-            const scores = await axios.get(`/api/scores/${authCtx.userId}`);
-            setScoreboard(scores.data);
-        }
-        generateLeaderboard();
-    }, [])
+export default function PublicLeaderboard({scoreboard}){
 
     return (
         <>

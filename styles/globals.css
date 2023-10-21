@@ -4,6 +4,21 @@ body{
   background: aliceblue;
 }
 
+/* scrollbar customizing -------------------------- */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(173, 173, 173);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(134, 134, 134);
+}
+
+
 .navBullet{
   list-style: none;
   text-decoration: none;
@@ -28,4 +43,29 @@ body{
 .correctAnswer{
   background: #14A44D;
   color: white;
+}
+.quizDifficulty{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 4px 8px;
+  color: white;
+  font-size: .65rem;
+  border-radius: 5px;
+}
+.difficultyTag{
+  color: white;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 4px 10px !important;
+  font-size: .7rem !important;
+}
+.easyColor{
+  background: #00B8A3;
+}
+.mediumColor{
+  background: #FFC01E;
+}
+.hardColor{
+  background: #EF4743;
 }
