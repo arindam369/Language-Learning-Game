@@ -50,7 +50,11 @@ export default function App({ Component, pageProps }) {
           toastOptions={{
             // Define default options
             className: "",
-            duration: 5000,
+            style: {
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: ".9rem"
+            },
+            duration: 3000,
           }}
         />
         <Component {...pageProps} />

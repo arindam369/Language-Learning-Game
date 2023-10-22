@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import styles from "../styles/Home.module.css";
 import AuthContext from "@/store/AuthContext";
+import toast from "react-hot-toast";
 
 export default function QuizContent({content, onNext}){
     const [selectedOption, setSelectedOption] = useState(null);
@@ -13,6 +14,9 @@ export default function QuizContent({content, onNext}){
 
         if(mySelection === content.answer){
             authCtx.updateYourScore(+authCtx.yourScore + +content.score);
+        }
+        else{
+            toast.error(`Correct Option: ${content.answer}`);
         }
         authCtx.updateTotalScore(+authCtx.totalScore + +content.score);
 
