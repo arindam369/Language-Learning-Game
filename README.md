@@ -1,40 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Language Learning Game
 
-First, run the development server:
+Master coding languages with our interactive **Language Learning Game**. From beginner to advanced levels, it offers dynamic exercises. Enhance programming skills in a fun, immersive environment. Start your coding journey to expertise now!
+
+<img alt="profile" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/97567a6e-22c3-4677-a35f-459885548d26">
+<img alt="home" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/72edd210-91a9-4cec-bed3-3e5513429191">
+<br/><br/>
+
+Link to the website: https://language-learning369.netlify.app
+
+
+## Features
+
+- User can sign up/login to their personal account
+- Start Quiz based on their selected language, difficulty level with specific no. of questions
+- User can save record after completing Quiz that will be visible in the Leaderboard and their profile dashboard
+- User can delete record
+- Check Leaderboard after completing Quiz
+- Profile Section available where any user can go to other user's profile and view their scoreboards
+- Questions will come initially based on the difficulty level, but later it will be based on the user's accuracy
+- If user is not able to answer questions properly give them more easy questions and if they are able to answer give harder question
+
+
+
+## Screenshots
+
+
+<img width="400" height="320" alt="contentQuiz" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/8c9ecf7d-e73f-4e94-90de-b2ee51f3cd70">
+<img width="400" height="320" alt="incorrect" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/4430a193-3a27-435d-91ff-dc8b55e63f42">
+<br/>
+<img width="500" height="320" alt="record" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/a629a13d-55b9-49fd-a764-649632f4f304">
+<img width="300" height="320" alt="auth" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/34aa0a88-f89a-4d1e-a3c9-3e9c41725d20">
+
+
+
+## Run Locally
+
+Clone the project **Language-Learning-Game**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/arindam369/Language-Learning-Game.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+  cd Language-Learning-Game
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Install all the dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Start the Development Server
 
-## Learn More
+```bash
+  npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open any browser and go to localhost:3000, _The project is live!_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Feedback
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+*If you have any kind of queries, please reach out to me*
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://arindam369.scty.in)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arindam369)
