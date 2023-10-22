@@ -32,18 +32,6 @@ export default async function handler(req, res) {
           .send({ error: "Unauthorized: Please authenticate yourself" });
       }
 
-      const newScore = {
-        language,
-        difficulty,
-        quantity,
-        yourScore,
-        totalScore,
-        rating,
-        userId,
-      };
-
-      authUser.scoreboard = authUser.scoreboard.concat(newScore);
-      const savedUser = await authUser.save();
       const createdScore = new Score({
         language,
         difficulty,
@@ -53,7 +41,22 @@ export default async function handler(req, res) {
         yourScore,
         totalScore,
       });
-      await createdScore.save();
+      const newCreatedScore = await createdScore.save();
+
+      const newScore = {
+        language,
+        difficulty,
+        quantity,
+        yourScore,
+        totalScore,
+        rating,
+        userId,
+        _id: newCreatedScore._id
+      };
+
+      authUser.scoreboard = authUser.scoreboard.concat(newScore);
+      const savedUser = await authUser.save();
+      
       return res.status(200).send(savedUser);
     } catch (err) {
       console.log(err);
