@@ -51,16 +51,35 @@ export default async function handler(req, res) {
         totalScore,
         rating,
         userId,
-        _id: newCreatedScore._id
+        _id: newCreatedScore._id,
       };
 
       authUser.scoreboard = authUser.scoreboard.concat(newScore);
       const savedUser = await authUser.save();
-      
+
       return res.status(200).send(savedUser);
     } catch (err) {
       console.log(err);
       res.status(400).send({ msg: err });
     }
+  } else if (req.method === "DELETE") {
+    await connectMongoDB();
+
+    const { id } = req.query;
+    const score = await Score.findOne({ _id: id });
+    const userId = score.user;
+
+    const user = await User.findOne({ _id: userId });
+
+    if (user) {
+      // Remove the score from the user's scoreboard array
+      user.scoreboard = user.scoreboard.filter((currElem) => currElem._id.toString() !== id);
+      await user.save();
+      await Score.deleteOne({_id: id});
+    } else {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    res.status(200).send(score);
   }
 }

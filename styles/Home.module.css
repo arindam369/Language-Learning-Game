@@ -248,9 +248,17 @@
   font-family: 'Poppins', sans-serif;
   font-size: .85rem;
   position: relative;
-  width: 150px;
+  width: 180px;
   margin: 10px;
   transition: .8s ease-in-out;
+}
+.deleteIcon{
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 1.1rem;
+  color: #b80a1b;
+  cursor: pointer;
 }
 .leaderboard:hover{
   transform: translateX(10px);
@@ -458,6 +466,7 @@
 .rankUserId{
   cursor: pointer;
 }
+
 
 
 /* Media Queries --------------------------------------------------------- */

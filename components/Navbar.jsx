@@ -6,21 +6,36 @@ import { useContext } from "react";
 import AuthContext from "@/store/AuthContext";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { confirmDialog } from "primereact/confirmdialog";
 
 export default function Navbar() {
   const router = useRouter();
   const authCtx = useContext(AuthContext);
 
-  const logout = async ()=>{
-    await axios.get(`/api/logout/${authCtx.userId}`).then(()=>{
-      toast.success("Logged out successfully");
-      authCtx.updateUserId(null);
-      authCtx.updateUserData(null);
-      authCtx.updateAuthenticationStatus(false);
-    }).catch((err)=>{
-      console.log(err);
+  const logout = async () => {
+    await axios
+      .get(`/api/logout/${authCtx.userId}`)
+      .then(() => {
+        toast.success("Logged out successfully");
+        authCtx.updateUserId(null);
+        authCtx.updateUserData(null);
+        authCtx.updateAuthenticationStatus(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const logoutConfirm = (event) => {
+    confirmDialog({
+      trigger: event.currentTarget,
+      message: "Are you sure you want to log out?",
+      header: "Logout",
+      icon: "pi pi-exclamation-triangle",
+      accept: () => logout(),
+      reject: () => {},
     });
-  }
+  };
 
   return (
     <>
@@ -35,7 +50,9 @@ export default function Navbar() {
             <Link
               href={"/leaderboard"}
               className={
-                router.pathname === "/leaderboard" ? "selectedNavBullet" : "navBullet"
+                router.pathname === "/leaderboard"
+                  ? "selectedNavBullet"
+                  : "navBullet"
               }
             >
               Leaderboard
@@ -43,23 +60,31 @@ export default function Navbar() {
             <Link
               href={"/dashboard"}
               className={
-                router.pathname === "/dashboard" ? "selectedNavBullet" : "navBullet"
+                router.pathname === "/dashboard"
+                  ? "selectedNavBullet"
+                  : "navBullet"
               }
             >
               Dashboard
             </Link>
 
-            {!authCtx.isAuthenticated && <Link
-              href={"/login"}
-              className={
-                router.pathname === "/login"
-                  ? "selectedNavBullet"
-                  : "navBullet"
-              }
-            >
-              Login
-            </Link>}
-            {authCtx.isAuthenticated && <div className="navBullet" onClick={logout}>Logout</div>}
+            {!authCtx.isAuthenticated && (
+              <Link
+                href={"/login"}
+                className={
+                  router.pathname === "/login"
+                    ? "selectedNavBullet"
+                    : "navBullet"
+                }
+              >
+                Login
+              </Link>
+            )}
+            {authCtx.isAuthenticated && (
+              <div className="navBullet" onClick={logoutConfirm}>
+                Logout
+              </div>
+            )}
           </div>
         </div>
       </div>
