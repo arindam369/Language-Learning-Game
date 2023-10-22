@@ -3,8 +3,8 @@
 
 Master coding languages with our interactive **Language Learning Game**. From beginner to advanced levels, it offers dynamic exercises. Enhance programming skills in a fun, immersive environment. Start your coding journey to expertise now!
 
-<img alt="profile" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/97567a6e-22c3-4677-a35f-459885548d26">
-<img alt="home" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/72edd210-91a9-4cec-bed3-3e5513429191">
+<img alt="profile" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/3a82ca1b-3ff1-4a45-9d46-f2d26d9af1ea">
+<img alt="home" width="400" height="320" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/84e17713-a230-4b75-99cc-64007d676cc9">
 <br/><br/>
 
 Link to the website: https://language-learning369.netlify.app
@@ -26,11 +26,11 @@ Link to the website: https://language-learning369.netlify.app
 ## Screenshots
 
 
-<img width="400" height="320" alt="contentQuiz" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/8c9ecf7d-e73f-4e94-90de-b2ee51f3cd70">
-<img width="400" height="320" alt="incorrect" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/4430a193-3a27-435d-91ff-dc8b55e63f42">
+<img width="400" height="320" alt="contentQuiz" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/418f9bdf-e054-4d05-bed6-30b2f43a89fb">
+<img width="400" height="320" alt="incorrect" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/4c91538a-906a-4d30-898b-1db9849dc8f1">
 <br/>
-<img width="500" height="320" alt="record" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/a629a13d-55b9-49fd-a764-649632f4f304">
-<img width="300" height="320" alt="auth" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/34aa0a88-f89a-4d1e-a3c9-3e9c41725d20">
+<img width="500" height="320" alt="record" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/020540b0-0c03-4335-a70d-bd223dae516e">
+<img width="300" height="320" alt="auth" src="https://github.com/arindam369/Language-Learning-Game/assets/92720594/33615045-f53d-4242-9904-d48c1645ea48">
 
 
 
