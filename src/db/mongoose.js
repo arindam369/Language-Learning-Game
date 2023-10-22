@@ -5,6 +5,6 @@ export const connectMongoDB = async ()=>{
   if(mongoose.connection.readyState === 1){
     return mongoose.connection.asPromise();
   }
-  return await mongoose.connect(process.env.MONGO_URL);
-  // return await mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.hspwrdh.mongodb.net/language-api?retryWrites=true&w=majority`);
+  // return await mongoose.connect(process.env.MONGO_URL);
+  return await mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.hspwrdh.mongodb.net/language-api?retryWrites=true&w=majority`);
 }
