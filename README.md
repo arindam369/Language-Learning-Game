@@ -62,6 +62,14 @@ Start the Development Server
 
 Open any browser and go to localhost:3000, _The project is live!_
 
+## Environment Variables
+There are 3 environment variables you need to use to operate backend. Create an .env file in the root directory and keep the following 3 variables there
+```
+JWT_SECRET=   // any string to be used as SECRET key for authentication
+MONGO_USER=   // MongoDB username
+MONGO_PASS=   // MongoDB password
+```
+
 ## Feedback
 
 *If you have any kind of queries, please reach out to me*
