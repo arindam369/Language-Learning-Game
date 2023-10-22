@@ -7,12 +7,12 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     // retrieve leaderboard for a language   GET /api/language/:language
     try {
-        await connectMongoDB();
+      await connectMongoDB();
       const { language } = req.query;
       const scores = await Score.find({ language: language });
       res.status(200).send(scores);
     } catch (err) {
-        console.log(err);
+      console.log(err);
       res.send(err);
     }
   }

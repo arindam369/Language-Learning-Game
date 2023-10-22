@@ -1,4 +1,4 @@
-body{
+body {
   padding: 0;
   margin: 0;
   background: aliceblue;
@@ -18,8 +18,7 @@ body{
   background: rgb(134, 134, 134);
 }
 
-
-.navBullet{
+.navBullet {
   list-style: none;
   text-decoration: none;
   margin: 0px 20px;
@@ -27,45 +26,60 @@ body{
   color: rgb(69, 68, 68);
   cursor: pointer;
 }
-.selectedNavBullet{
+.selectedNavBullet {
   list-style: none;
   text-decoration: none;
   margin: 0px 20px;
   font-weight: 600;
   cursor: pointer;
-  color: #F75023;
+  color: #f75023;
 }
 
-.wrongAnswer{
-  background: #DC4C64;
+.wrongAnswer {
+  background: #dc4c64;
   color: white;
 }
-.correctAnswer{
-  background: #14A44D;
+.correctAnswer {
+  background: #14a44d;
   color: white;
 }
-.quizDifficulty{
+.quizDifficulty {
   position: absolute;
   top: 6px;
   right: 6px;
   padding: 4px 8px;
   color: white;
-  font-size: .65rem;
+  font-size: 0.65rem;
   border-radius: 5px;
 }
-.difficultyTag{
+.difficultyTag {
   color: white;
   border-radius: 4px;
   display: inline-block;
   padding: 4px 10px !important;
-  font-size: .7rem !important;
+  font-size: 0.7rem !important;
 }
-.easyColor{
-  background: #00B8A3;
+.easyColor {
+  background: #00b8a3;
 }
-.mediumColor{
-  background: #FFC01E;
+.mediumColor {
+  background: #ffc01e;
 }
-.hardColor{
-  background: #EF4743;
+.hardColor {
+  background: #ef4743;
+}
+
+@media (max-width: 570px) {
+  .difficultyTag {
+    padding: 4px 6px !important;
+    font-size: 0.6rem !important;
+  }
+}
+@media (max-width: 462px) {
+  .navBullet {
+    margin: 0px 10px;
+  }
+  .selectedNavBullet {
+    margin: 0px 10px;
+  }
 }

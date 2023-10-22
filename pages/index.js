@@ -84,12 +84,12 @@ export default function IndexPage(){
     <>
       <Navbar/>
       <div className={styles.homeContainer}>
-        {visibleRules && <>
+        {(visibleRules || !authCtx.isAuthenticated) && <>
           <Quiz onQuiz={onQuiz}/>
           <Instructions/>
         </>}
         {
-          !visibleRules && <>
+          !visibleRules && authCtx.isAuthenticated && <>
             {+authCtx.questionsSolved < +authCtx.quantity && <QuizContent content={currentQues} onNext={goNext}/>}
             <Scoreboard onGenerateEasy={generateEasy} onGenerateMedium={generateMedium} onGenerateHard={generateHard} shouldGoNext={shouldGoNext}/>
           </>

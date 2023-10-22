@@ -53,7 +53,7 @@ export default function RankTable({ language, generateSignal }) {
                 return (
                   <tr key={id}>
                     <td>{id + 1}</td>
-                    <td className={styles.rankUserId} onClick={()=>{router.push(`/profile/${data.user}`)}}>{data.userId}</td>
+                    <td className={styles.rankUserId} onClick={()=>{router.push(`/profile/${data.user}`)}}>{data.userId.length>10 ? data.userId.substring(0, 10)+"..." : data.userId}</td>
                     <td>
                       {data.yourScore}/{data.totalScore}
                     </td>
@@ -63,7 +63,7 @@ export default function RankTable({ language, generateSignal }) {
                     <td className={data.difficulty==="easy"?"difficultyTag easyColor":data.difficulty==="medium"?"difficultyTag mediumColor":"difficultyTag hardColor"}>
                       {data.difficulty.replace(/^\w/, (c) => c.toUpperCase())}
                     </td>
-                    <td>{data.quantity} Questions</td>
+                    <td>{data.quantity} <span className={styles.questionVanished}>Questions</span></td>
                   </tr>
                 );
               })}

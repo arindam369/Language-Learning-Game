@@ -3,6 +3,7 @@ import User from "@/src/models/user";
 
 export default async function handler(req, res) {
     if(req.method === "GET"){           // retrieve all users
+        await connectMongoDB();
         const users = await User.find();
         res.status(200).send(users);
     }
